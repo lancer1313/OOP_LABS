@@ -1,0 +1,17 @@
+D:\Works C#\OOPLabs\WinformsUI\bin\Debug\net6.0-windows\WinformsUI.exe
+D:\Works C#\OOPLabs\WinformsUI\bin\Debug\net6.0-windows\WinformsUI.deps.json
+D:\Works C#\OOPLabs\WinformsUI\bin\Debug\net6.0-windows\WinformsUI.runtimeconfig.json
+D:\Works C#\OOPLabs\WinformsUI\bin\Debug\net6.0-windows\WinformsUI.dll
+D:\Works C#\OOPLabs\WinformsUI\bin\Debug\net6.0-windows\WinformsUI.pdb
+D:\Works C#\OOPLabs\WinformsUI\obj\Debug\net6.0-windows\WinformsUI.csproj.AssemblyReference.cache
+D:\Works C#\OOPLabs\WinformsUI\obj\Debug\net6.0-windows\WinformsUI.MainWindow.resources
+D:\Works C#\OOPLabs\WinformsUI\obj\Debug\net6.0-windows\WinformsUI.csproj.GenerateResource.cache
+D:\Works C#\OOPLabs\WinformsUI\obj\Debug\net6.0-windows\WinformsUI.GeneratedMSBuildEditorConfig.editorconfig
+D:\Works C#\OOPLabs\WinformsUI\obj\Debug\net6.0-windows\WinformsUI.AssemblyInfoInputs.cache
+D:\Works C#\OOPLabs\WinformsUI\obj\Debug\net6.0-windows\WinformsUI.AssemblyInfo.cs
+D:\Works C#\OOPLabs\WinformsUI\obj\Debug\net6.0-windows\WinformsUI.csproj.CoreCompileInputs.cache
+D:\Works C#\OOPLabs\WinformsUI\obj\Debug\net6.0-windows\WinformsUI.dll
+D:\Works C#\OOPLabs\WinformsUI\obj\Debug\net6.0-windows\refint\WinformsUI.dll
+D:\Works C#\OOPLabs\WinformsUI\obj\Debug\net6.0-windows\WinformsUI.pdb
+D:\Works C#\OOPLabs\WinformsUI\obj\Debug\net6.0-windows\WinformsUI.genruntimeconfig.cache
+D:\Works C#\OOPLabs\WinformsUI\obj\Debug\net6.0-windows\ref\WinformsUI.dll
