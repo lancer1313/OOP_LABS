@@ -9,7 +9,7 @@ namespace WinformsUI
     /// <summary>
     /// Класс, реализующий библиотеку
     /// </summary>
-    internal class Library
+    public class Library
     {
         /// <summary>
         /// Свойство названия библиотеки

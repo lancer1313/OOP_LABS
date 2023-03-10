@@ -4,16 +4,16 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace WinformsUI
 {
     public partial class MainWindow : Form
     {
-        private Dictionary<int, Library> _libraryDict = new Dictionary<int, Library>();
-
         public MainWindow()
         {
             InitializeComponent();
@@ -21,7 +21,7 @@ namespace WinformsUI
 
         private void getClassInfoButton_Click(object sender, EventArgs e)
         {
-            FillOutputLog(Library.GetClassInfo());
+            Utils.FillOutputLog(Library.GetClassInfo(), outputLog);
         }
 
         private void getInheritedExceptionButton_Click(object sender, EventArgs e)
@@ -32,42 +32,13 @@ namespace WinformsUI
             }
             catch(StackOverflowException ex)
             {
-                MessageBox.Show(ex.Message);
+                Utils.MessageBox(IntPtr.Zero, ex.Message, "Ошибка", 0);
             }
         }
-
-        private void FillOutputLog(string[] multilineMessage)
-        {
-            foreach (var str in multilineMessage)
-            {
-                outputLog.Text += str + "\r" + "\n";
-                outputLog.Text += "---------------------------------------" + "\r" + "\n";
-            }
-            outputLog.Text += "===========================================" + "\r" + "\n";
-        }
-
-        private void FillOutputLog(string message)
-        {
-            outputLog.Text += message + "\r" + "\n";
-            outputLog.Text += "===========================================" + "\r" + "\n";
-        }
-
+        
         private void GetStackOverflowException()
         {
-            throw new StackOverflowException("Ты вызвал бесконечную рекурсию балбес");
-        }
-
-        private void createObjButton_Click(object sender, EventArgs e)
-        {
-            string name = newObjName.Text == "" ? "Безымянная" : newObjName.Text;
-            string description = newObjDescription.Text;
-            string type = newObjType.Text == "" ? "Обычная" : newObjType.Text;
-            decimal rating = newObjRating.Value;
-            long booksNumber = (long)newObjBooksNumber.Value;
-            int readingRooms = (int)newObjReadingRooms.Value;
-
-
-            _libraryDict.Add(_libraryDict.Count + 1, new Library(name, description, booksNumber, readingRooms, type, withWiFiCheckBox.Checked, rating));
+            throw new StackOverflowException("Ты вызвал бесконечную рекурсию, пользователь");
         }
 
         private void clearLogButton_Click(object sender, EventArgs e)
@@ -80,85 +51,32 @@ namespace WinformsUI
             Close();
         }
 
-        private void getAllObjsButton_Click(object sender, EventArgs e)
+        private void openObjsWindow_Click(object sender, EventArgs e)
         {
-            string[] objs = new string[_libraryDict.Count];
-            int i = 0;
-            foreach (var lib in _libraryDict)
-            {
-                objs[i++] = $"ID: {lib.Key}, {lib.Value}";
-            }
-            FillOutputLog(objs);
+            ObjectsManipulatorWindow objsWindow = new ObjectsManipulatorWindow();
+            objsWindow.Show();
         }
 
-        private void changePropertyButton_Click(object sender, EventArgs e)
+        private void makeCollectionsTestButton_Click(object sender, EventArgs e)
         {
-            if (int.TryParse(changePropertyID.Text, out int key))
+            int startTimeDictionary = Environment.TickCount;
+            Dictionary<int, Library> map = new Dictionary<int, Library>();
+            for (int i = 0; i < 100000; i++)
             {
-                if (_libraryDict.ContainsKey(key))
-                {
-                    _libraryDict.TryGetValue(key, out var lib);
-                    try
-                    {
-                        lib.TryChangeProperty(changePropertyName.Text, changePropertyValue.Text);
-                        FillOutputLog("Объект изменен успешно");
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Такого ID не существует");
-                }
+                map.Add(i, new Library());
             }
-            else
-            {
-                MessageBox.Show("Неправильный тип ключа");
-            }
-            
-        }
+            int timeDictionary = Environment.TickCount - startTimeDictionary;
 
-        private void printPropertyButton_Click(object sender, EventArgs e)
-        {
-            if (int.TryParse(printPropertyID.Text, out int key))
+            int startTimeArray = Environment.TickCount;
+            Library[] libraries = new Library[100000];
+            for (int i = 0; i < 100000; i++)
             {
-                if (_libraryDict.ContainsKey(key))
-                {
-                    _libraryDict.TryGetValue(key, out var lib);
-                    if (inHexCheckBox.Checked)
-                    {
-                        try
-                        {
-                            FillOutputLog(lib.GetPropertyInHexMessage(printPropertyName.Text));
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message);
-                        }
-                    }
-                    else
-                    {
-                        try
-                        {
-                            FillOutputLog(lib.GetPropertyMessage(printPropertyName.Text));
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message);
-                        }
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Такого ID не существует");
-                }
+                libraries[i] = new Library();   
             }
-            else
-            {
-                MessageBox.Show("Неправильный тип ключа");
-            }
+            int timeArray = Environment.TickCount - startTimeArray;
+
+            listView.Items.Add($"Количество тиков создание и заполнение Dictionary: {timeDictionary}", 0);
+            listView.Items.Add($"Количесвто тиков создание и заполнение Array: {timeArray}", 1);
         }
     }
 }
