@@ -38,6 +38,8 @@
             this.exitButton = new System.Windows.Forms.Button();
             this.getInheritedExceptionButton = new System.Windows.Forms.Button();
             this.getClassInfoButton = new System.Windows.Forms.Button();
+            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -87,12 +89,15 @@
             // 
             // listView
             // 
-            this.listView.Location = new System.Drawing.Point(6, 299);
+            this.listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+            this.listView.Location = new System.Drawing.Point(17, 309);
             this.listView.Name = "listView";
-            this.listView.Size = new System.Drawing.Size(424, 154);
+            this.listView.Size = new System.Drawing.Size(406, 144);
             this.listView.TabIndex = 22;
             this.listView.UseCompatibleStateImageBehavior = false;
-            this.listView.View = System.Windows.Forms.View.Tile;
+            this.listView.View = System.Windows.Forms.View.Details;
             // 
             // makeCollectionsTestButton
             // 
@@ -154,6 +159,16 @@
             this.getClassInfoButton.UseVisualStyleBackColor = true;
             this.getClassInfoButton.Click += new System.EventHandler(this.getClassInfoButton_Click);
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Dictionary";
+            this.columnHeader1.Width = 200;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Array";
+            this.columnHeader2.Width = 200;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -182,5 +197,7 @@
         private Button openObjsWindow;
         private Button makeCollectionsTestButton;
         private ListView listView;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
     }
 }

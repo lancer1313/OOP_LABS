@@ -68,32 +68,32 @@ namespace WinformsUI
             timer.Start();
             performanceTests.CreateDictionary();
             timer.Stop();
-            listView.Items.Add($"Количество тиков создание и заполнение Dictionary: {timer.Elapsed.ToString(@"m\:ss\.fff")}", 0);
-
+            ListViewItem item1 = new ListViewItem($"Создание и заполнение: {timer.Elapsed.ToString(@"m\:ss\.fff")}");
             timer.Start();
             performanceTests.CreateArray();
             timer.Stop();
-            listView.Items.Add($"Количесвто тиков создание и заполнение Array: {timer.Elapsed.ToString(@"m\:ss\.fff")}", 1);
+            item1.SubItems.Add($"Создание и заполнение: {timer.Elapsed.ToString(@"m\:ss\.fff")}");
+            listView.Items.Add(item1);  
 
             timer.Start();
             performanceTests.TakeFromDictionaryInOrder();
             timer.Stop();
-            listView.Items.Add($"Количество тиков выборка по порядку Dictionary: {timer.Elapsed.ToString(@"m\:ss\.fff")}", 2);
-
+            ListViewItem item2 = new ListViewItem($"Выборка по порядку: {timer.Elapsed.ToString(@"m\:ss\.fff")}");
             timer.Start();
             performanceTests.TakeFromArrayInOrder();
             timer.Stop();
-            listView.Items.Add($"Количество тиков выборка по порядку Array: {timer.Elapsed.ToString(@"m\:ss\.fff")}", 3);
+            item2.SubItems.Add($"Выборка по порядку: {timer.Elapsed.ToString(@"m\:ss\.fff")}");
+            listView.Items.Add(item2);
 
             timer.Start();
             performanceTests.TakeFromDictionaryInRandom();
             timer.Stop();
-            listView.Items.Add($"Количество тиков выборка в случайном порядке Dictionary: {timer.Elapsed.ToString(@"m\:ss\.fff")}", 4);
-
+            ListViewItem item3 = new ListViewItem($"В случайном порядке: {timer.Elapsed.ToString(@"m\:ss\.fff")}");
             timer.Start();
             performanceTests.TakeFromArrayInRandom();
             timer.Stop();
-            listView.Items.Add($"Количество тиков выборка в случайном порядке Array: {timer.Elapsed.ToString(@"m\:ss\.fff")}", 5);
+            item3.SubItems.Add($"В случайном порядке: {timer.Elapsed.ToString(@"m\:ss\.fff")}");
+            listView.Items.Add(item3);
         }
     }
 }
