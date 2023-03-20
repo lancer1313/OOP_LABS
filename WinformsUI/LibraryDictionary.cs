@@ -20,15 +20,28 @@ namespace WinformsUI
         /// <summary>
         /// Событие при добавлении элемента из коллекции
         /// </summary>
-        public event EventHandler<Library> OnAdditionChange;
+        public event AdditionEvent OnAdditionChange;
         /// <summary>
         /// Событие при удалении элемента из коллекции
         /// </summary>
-        public event EventHandler<int> OnRemovalChange;
+        public event RemoveitionEvent OnRemovalChange;
         /// <summary>
         /// Свойство текущего ключа
         /// </summary>
         public int CurrentID { get { return _newId; } }
+
+        /// <summary>
+        /// Делегат для события добавления
+        /// </summary>
+        /// <param name="sender">Откуда был вызван</param>
+        /// <param name="library">Объект класса Library</param>
+        public delegate void AdditionEvent(object sender, Library library);
+        /// <summary>
+        /// Делегат для события удаления
+        /// </summary>
+        /// <param name="sender">Откуда был вызван</param>
+        /// <param name="id">Целочисленное число - айди</param>
+        public delegate void RemoveitionEvent(object sender, int id);
 
         /// <summary>
         /// Конструктор без параметров
