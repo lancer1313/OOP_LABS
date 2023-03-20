@@ -77,6 +77,7 @@
             this.exitButton = new System.Windows.Forms.Button();
             this.clearLogButton = new System.Windows.Forms.Button();
             this.printObjsAsString = new System.Windows.Forms.Button();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -87,10 +88,12 @@
             this.groupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox4
             // 
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox4.Controls.Add(this.inHexCheckBox);
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Controls.Add(this.printPropertyName);
@@ -158,6 +161,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.changePropertyName);
             this.groupBox3.Controls.Add(this.label2);
@@ -232,6 +236,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox5.Controls.Add(this.withWiFiCheckBox);
             this.groupBox5.Controls.Add(this.createObjButton);
             this.groupBox5.Controls.Add(this.label11);
@@ -372,6 +377,10 @@
             // 
             // objsTable
             // 
+            this.objsTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.objsTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.objsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.objsTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idCol,
@@ -384,10 +393,12 @@
             this.withWiFiCol});
             this.objsTable.Location = new System.Drawing.Point(6, 19);
             this.objsTable.Name = "objsTable";
+            this.objsTable.ReadOnly = true;
             this.objsTable.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.objsTable.RowHeadersVisible = false;
             this.objsTable.RowHeadersWidth = 35;
             this.objsTable.RowTemplate.Height = 25;
+            this.objsTable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.objsTable.Size = new System.Drawing.Size(574, 307);
             this.objsTable.TabIndex = 19;
             // 
@@ -396,59 +407,54 @@
             this.idCol.HeaderText = "ID";
             this.idCol.Name = "idCol";
             this.idCol.ReadOnly = true;
-            this.idCol.Width = 30;
             // 
             // nameCol
             // 
             this.nameCol.HeaderText = "Название";
             this.nameCol.Name = "nameCol";
             this.nameCol.ReadOnly = true;
-            this.nameCol.Width = 90;
             // 
             // descriptionCol
             // 
             this.descriptionCol.HeaderText = "Описание";
             this.descriptionCol.Name = "descriptionCol";
             this.descriptionCol.ReadOnly = true;
-            this.descriptionCol.Width = 99;
             // 
             // typeCol
             // 
             this.typeCol.HeaderText = "Тип";
             this.typeCol.Name = "typeCol";
             this.typeCol.ReadOnly = true;
-            this.typeCol.Width = 90;
             // 
             // booksNumberCol
             // 
             this.booksNumberCol.HeaderText = "Количество книг";
             this.booksNumberCol.Name = "booksNumberCol";
             this.booksNumberCol.ReadOnly = true;
-            this.booksNumberCol.Width = 80;
             // 
             // readingRoomsCol
             // 
             this.readingRoomsCol.HeaderText = "Читальных комнат";
             this.readingRoomsCol.Name = "readingRoomsCol";
             this.readingRoomsCol.ReadOnly = true;
-            this.readingRoomsCol.Width = 80;
             // 
             // ratingCol
             // 
             this.ratingCol.HeaderText = "Рейтинг";
             this.ratingCol.Name = "ratingCol";
             this.ratingCol.ReadOnly = true;
-            this.ratingCol.Width = 55;
             // 
             // withWiFiCol
             // 
             this.withWiFiCol.HeaderText = "С WiFi";
             this.withWiFiCol.Name = "withWiFiCol";
             this.withWiFiCol.ReadOnly = true;
-            this.withWiFiCol.Width = 50;
             // 
             // groupBox
             // 
+            this.groupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox.Controls.Add(this.objsTable);
             this.groupBox.Location = new System.Drawing.Point(12, 12);
             this.groupBox.Name = "groupBox";
@@ -459,6 +465,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.outputLog);
             this.groupBox1.Location = new System.Drawing.Point(12, 350);
             this.groupBox1.Name = "groupBox1";
@@ -469,15 +478,20 @@
             // 
             // outputLog
             // 
+            this.outputLog.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.outputLog.Location = new System.Drawing.Point(6, 22);
             this.outputLog.Multiline = true;
             this.outputLog.Name = "outputLog";
+            this.outputLog.ReadOnly = true;
             this.outputLog.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.outputLog.Size = new System.Drawing.Size(574, 209);
             this.outputLog.TabIndex = 0;
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.deleteObjButton);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.deleteObjID);
@@ -516,7 +530,8 @@
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(913, 551);
+            this.exitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.exitButton.Location = new System.Drawing.Point(303, 89);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(110, 36);
             this.exitButton.TabIndex = 23;
@@ -526,7 +541,7 @@
             // 
             // clearLogButton
             // 
-            this.clearLogButton.Location = new System.Drawing.Point(609, 467);
+            this.clearLogButton.Location = new System.Drawing.Point(6, 22);
             this.clearLogButton.Name = "clearLogButton";
             this.clearLogButton.Size = new System.Drawing.Size(175, 36);
             this.clearLogButton.TabIndex = 24;
@@ -536,7 +551,7 @@
             // 
             // printObjsAsString
             // 
-            this.printObjsAsString.Location = new System.Drawing.Point(842, 467);
+            this.printObjsAsString.Location = new System.Drawing.Point(237, 22);
             this.printObjsAsString.Name = "printObjsAsString";
             this.printObjsAsString.Size = new System.Drawing.Size(176, 36);
             this.printObjsAsString.TabIndex = 25;
@@ -544,14 +559,25 @@
             this.printObjsAsString.UseVisualStyleBackColor = true;
             this.printObjsAsString.Click += new System.EventHandler(this.printObjsAsString_Click);
             // 
+            // groupBox6
+            // 
+            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox6.Controls.Add(this.clearLogButton);
+            this.groupBox6.Controls.Add(this.exitButton);
+            this.groupBox6.Controls.Add(this.printObjsAsString);
+            this.groupBox6.Location = new System.Drawing.Point(604, 456);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(419, 131);
+            this.groupBox6.TabIndex = 26;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Разное";
+            // 
             // ObjectsManipulatorWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1035, 599);
-            this.Controls.Add(this.printObjsAsString);
-            this.Controls.Add(this.clearLogButton);
-            this.Controls.Add(this.exitButton);
+            this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox);
@@ -575,6 +601,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -630,5 +657,6 @@
         private DataGridViewTextBoxColumn withWiFiCol;
         private Button clearLogButton;
         private Button printObjsAsString;
+        private GroupBox groupBox6;
     }
 }

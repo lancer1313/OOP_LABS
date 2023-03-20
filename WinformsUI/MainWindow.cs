@@ -1,7 +1,9 @@
-﻿using System;
+﻿using BenchmarkDotNet.Running;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -59,24 +61,40 @@ namespace WinformsUI
 
         private void makeCollectionsTestButton_Click(object sender, EventArgs e)
         {
-            int startTimeDictionary = Environment.TickCount;
-            Dictionary<int, Library> map = new Dictionary<int, Library>();
-            for (int i = 0; i < 100000; i++)
-            {
-                map.Add(i, new Library());
-            }
-            int timeDictionary = Environment.TickCount - startTimeDictionary;
+            listView.Items.Clear();
 
-            int startTimeArray = Environment.TickCount;
-            Library[] libraries = new Library[100000];
-            for (int i = 0; i < 100000; i++)
-            {
-                libraries[i] = new Library();   
-            }
-            int timeArray = Environment.TickCount - startTimeArray;
+            PerformanceTests performanceTests = new PerformanceTests();
+            var timer = new Stopwatch();
 
-            listView.Items.Add($"Количество тиков создание и заполнение Dictionary: {timeDictionary}", 0);
-            listView.Items.Add($"Количесвто тиков создание и заполнение Array: {timeArray}", 1);
+            timer.Start();
+            performanceTests.CreateDictionary();
+            timer.Stop();
+            listView.Items.Add($"Количество тиков создание и заполнение Dictionary: {timer.Elapsed.ToString(@"m\:ss\.fff")}", 0);
+
+            timer.Start();
+            performanceTests.CreateArray();
+            timer.Stop();
+            listView.Items.Add($"Количесвто тиков создание и заполнение Array: {timer.Elapsed.ToString(@"m\:ss\.fff")}", 1);
+
+            timer.Start();
+            performanceTests.TakeFromDictionaryInOrder();
+            timer.Stop();
+            listView.Items.Add($"Количество тиков выборка по порядку Dictionary: {timer.Elapsed.ToString(@"m\:ss\.fff")}", 2);
+
+            timer.Start();
+            performanceTests.TakeFromArrayInOrder();
+            timer.Stop();
+            listView.Items.Add($"Количество тиков выборка по порядку Array: {timer.Elapsed.ToString(@"m\:ss\.fff")}", 3);
+
+            timer.Start();
+            performanceTests.TakeFromDictionaryInRandom();
+            timer.Stop();
+            listView.Items.Add($"Количество тиков выборка в случайном порядке Dictionary: {timer.Elapsed.ToString(@"m\:ss\.fff")}", 4);
+
+            timer.Start();
+            performanceTests.TakeFromArrayInRandom();
+            timer.Stop();
+            listView.Items.Add($"Количество тиков выборка в случайном порядке Array: {timer.Elapsed.ToString(@"m\:ss\.fff")}", 5);
         }
     }
 }

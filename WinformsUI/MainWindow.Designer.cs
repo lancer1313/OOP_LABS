@@ -44,8 +44,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.outputLog);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(3, 22);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(461, 509);
             this.groupBox1.TabIndex = 0;
@@ -54,6 +57,9 @@
             // 
             // outputLog
             // 
+            this.outputLog.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.outputLog.Location = new System.Drawing.Point(6, 22);
             this.outputLog.Multiline = true;
             this.outputLog.Name = "outputLog";
@@ -64,6 +70,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.listView);
             this.groupBox2.Controls.Add(this.makeCollectionsTestButton);
             this.groupBox2.Controls.Add(this.openObjsWindow);
@@ -80,16 +87,16 @@
             // 
             // listView
             // 
-            this.listView.Location = new System.Drawing.Point(17, 239);
+            this.listView.Location = new System.Drawing.Point(6, 299);
             this.listView.Name = "listView";
-            this.listView.Size = new System.Drawing.Size(408, 154);
+            this.listView.Size = new System.Drawing.Size(424, 154);
             this.listView.TabIndex = 22;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Tile;
             // 
             // makeCollectionsTestButton
             // 
-            this.makeCollectionsTestButton.Location = new System.Drawing.Point(17, 167);
+            this.makeCollectionsTestButton.Location = new System.Drawing.Point(17, 259);
             this.makeCollectionsTestButton.Name = "makeCollectionsTestButton";
             this.makeCollectionsTestButton.Size = new System.Drawing.Size(195, 34);
             this.makeCollectionsTestButton.TabIndex = 21;
@@ -155,7 +162,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "MainWindow";
-            this.Text = "Лабораторная работа 2 Левин Семичев (главное окно)";
+            this.Text = "21ВП2 Левин Семичев (Главное окно)";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
