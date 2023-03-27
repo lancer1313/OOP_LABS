@@ -54,6 +54,8 @@
             this.createCollectionArrayButton = new System.Windows.Forms.Button();
             this.showColArrayButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.collectionsLengthNTextBox = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
             this.Консоль.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -63,6 +65,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.toLengthTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fromLengthTextBox)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.collectionsLengthNTextBox)).BeginInit();
             this.SuspendLayout();
             // 
             // consoleLog
@@ -168,6 +171,8 @@
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.collectionsLengthNTextBox);
+            this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.stringLengthTextBox);
             this.groupBox2.Controls.Add(this.executeArrayCollectionOperationsButton);
             this.groupBox2.Controls.Add(this.collectionLengthTextBox);
@@ -192,14 +197,14 @@
             // 
             // stringLengthTextBox
             // 
-            this.stringLengthTextBox.Location = new System.Drawing.Point(233, 174);
+            this.stringLengthTextBox.Location = new System.Drawing.Point(254, 161);
             this.stringLengthTextBox.Name = "stringLengthTextBox";
             this.stringLengthTextBox.Size = new System.Drawing.Size(120, 23);
             this.stringLengthTextBox.TabIndex = 16;
             // 
             // executeArrayCollectionOperationsButton
             // 
-            this.executeArrayCollectionOperationsButton.Location = new System.Drawing.Point(6, 205);
+            this.executeArrayCollectionOperationsButton.Location = new System.Drawing.Point(6, 217);
             this.executeArrayCollectionOperationsButton.Name = "executeArrayCollectionOperationsButton";
             this.executeArrayCollectionOperationsButton.Size = new System.Drawing.Size(196, 32);
             this.executeArrayCollectionOperationsButton.TabIndex = 10;
@@ -209,7 +214,7 @@
             // 
             // collectionLengthTextBox
             // 
-            this.collectionLengthTextBox.Location = new System.Drawing.Point(117, 77);
+            this.collectionLengthTextBox.Location = new System.Drawing.Point(133, 77);
             this.collectionLengthTextBox.Minimum = new decimal(new int[] {
             1,
             0,
@@ -229,13 +234,13 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(6, 79);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(105, 15);
+            this.label6.Size = new System.Drawing.Size(121, 15);
             this.label6.TabIndex = 18;
-            this.label6.Text = "Длина коллекции";
+            this.label6.Text = "Длина коллекции до";
             // 
             // arrayLengthTextBox
             // 
-            this.arrayLengthTextBox.Location = new System.Drawing.Point(117, 49);
+            this.arrayLengthTextBox.Location = new System.Drawing.Point(133, 48);
             this.arrayLengthTextBox.Minimum = new decimal(new int[] {
             1,
             0,
@@ -255,14 +260,14 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(6, 51);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 15);
+            this.label5.Size = new System.Drawing.Size(107, 15);
             this.label5.TabIndex = 16;
-            this.label5.Text = "Длина массива";
+            this.label5.Text = "Длина массива до";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 176);
+            this.label2.Location = new System.Drawing.Point(6, 164);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(213, 15);
             this.label2.TabIndex = 15;
@@ -270,7 +275,7 @@
             // 
             // toLengthTextBox
             // 
-            this.toLengthTextBox.Location = new System.Drawing.Point(213, 22);
+            this.toLengthTextBox.Location = new System.Drawing.Point(222, 19);
             this.toLengthTextBox.Name = "toLengthTextBox";
             this.toLengthTextBox.Size = new System.Drawing.Size(57, 23);
             this.toLengthTextBox.TabIndex = 15;
@@ -278,7 +283,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 147);
+            this.label1.Location = new System.Drawing.Point(6, 135);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(220, 15);
             this.label1.TabIndex = 13;
@@ -287,7 +292,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(182, 24);
+            this.label4.Location = new System.Drawing.Point(196, 24);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(20, 15);
             this.label4.TabIndex = 14;
@@ -304,14 +309,14 @@
             // 
             // searchValueTextBox
             // 
-            this.searchValueTextBox.Location = new System.Drawing.Point(233, 144);
+            this.searchValueTextBox.Location = new System.Drawing.Point(254, 132);
             this.searchValueTextBox.Name = "searchValueTextBox";
             this.searchValueTextBox.Size = new System.Drawing.Size(120, 23);
             this.searchValueTextBox.TabIndex = 12;
             // 
             // fromLengthTextBox
             // 
-            this.fromLengthTextBox.Location = new System.Drawing.Point(117, 22);
+            this.fromLengthTextBox.Location = new System.Drawing.Point(133, 19);
             this.fromLengthTextBox.Name = "fromLengthTextBox";
             this.fromLengthTextBox.Size = new System.Drawing.Size(57, 23);
             this.fromLengthTextBox.TabIndex = 12;
@@ -348,6 +353,32 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Разное";
             // 
+            // collectionsLengthNTextBox
+            // 
+            this.collectionsLengthNTextBox.Location = new System.Drawing.Point(254, 191);
+            this.collectionsLengthNTextBox.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.collectionsLengthNTextBox.Name = "collectionsLengthNTextBox";
+            this.collectionsLengthNTextBox.Size = new System.Drawing.Size(120, 23);
+            this.collectionsLengthNTextBox.TabIndex = 21;
+            this.collectionsLengthNTextBox.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 193);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(242, 15);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Количество коллекций длины n: введите n";
+            // 
             // LINQWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -370,6 +401,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.toLengthTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fromLengthTextBox)).EndInit();
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.collectionsLengthNTextBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -402,5 +434,7 @@
         private Label label3;
         private NumericUpDown fromLengthTextBox;
         private GroupBox groupBox3;
+        private NumericUpDown collectionsLengthNTextBox;
+        private Label label7;
     }
 }

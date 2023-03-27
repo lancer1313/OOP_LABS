@@ -28,11 +28,6 @@ namespace WinformsUI
             _libraries.Add(new Library("Никольская библиотека", "cool library 1", 600, 60, "public", true, 5.0m));
             _libraries.Add(new Library("Зареченская библиотека", "cool library 2", 700, 70, "public", true, 5.0m));
             _libraries.Add(new Library("Ртищевская библиотека", "cool library 3", 800, 80, "public", true, 5.0m));
-
-            //for (int i = 0; i < _lists.Length; i++)
-            //{
-            //    _lists[i] = new LinkedList<string>();
-            //}
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -113,15 +108,16 @@ namespace WinformsUI
 
         private void createCollectionArrayButton_Click(object sender, EventArgs e)
         {
-            LinkedList<string>[] list = new LinkedList<string>[(int)arrayLengthTextBox.Value];
+            Random random = new Random();
+            LinkedList<string>[] list = new LinkedList<string>[random.Next(1, (int)arrayLengthTextBox.Value)];
             for (int i = 0; i < list.Length; i++)
             {
                 list[i] = new LinkedList<string>();
             }
-            Random random = new Random();
             for (int k = 0; k < list.Length; k++)
             {
-                for (int i = 0; i < (int)collectionLengthTextBox.Value; i++)
+                int collectionLength = random.Next(1, (int)collectionLengthTextBox.Value);
+                for (int i = 0; i < collectionLength; i++)
                 {
                     int length = random.Next((int)fromLengthTextBox.Value, (int)toLengthTextBox.Value);
                     StringBuilder stringBuilder = new StringBuilder();
@@ -196,37 +192,18 @@ namespace WinformsUI
             Utils.FillOutputLog("3) ПОИСК СТРОК ПО ДЛИНЕ", consoleLog);
             int length = (int)stringLengthTextBox.Value;
             int count = 0;
-            for (int i = 0; i < _lists.Length; i++)
+            foreach (var item in _lists)
             {
-                for (int j = 0; j < _lists[i].Count; j++)
-                {
-                    if (_lists[i].ElementAt(j).Count() == length)
-                    {
-                        count++;
-                    }
-                }
+                count += item.Where(str => str.Length == length).Count();
             }
             Utils.FillOutputLog($"По длине {stringLengthTextBox.Value} найдено: {count} строк", consoleLog);
-            int max = 0;
-            foreach (var item in _lists)
-            {
-                int newMax = item.Max(str => str.Length);
-                if (newMax > max)
-                {
-                    max = newMax;
-                }
-            }
-            Utils.FillOutputLog($"Максимальная длина: {max}", consoleLog);
-            int min = max;
-            foreach (var item in _lists)
-            {
-                int newMin = item.Min(str => str.Length);
-                if (newMin < min)
-                {
-                    min = newMin;
-                }
-            }
-            Utils.FillOutputLog($"Минимальная длина: {min}", consoleLog);
+            int collectionsLength = _lists.Count(list => list.Count == (int)collectionsLengthNTextBox.Value);
+            Utils.FillOutputLog($"Количество коллекций длины n: {collectionsLength}", consoleLog);
+            int max = _lists.Max(list => list.Count);
+            Utils.FillOutputLog($"Максимальная длина коллекции: {max}", consoleLog);
+            int min = _lists.Min(list => list.Count);
+            Utils.FillOutputLog($"Минимальная длина коллекции: {min}", consoleLog);
+
 
             Utils.FillOutputLog("4) СОРТИРОВКА В ВОЗРАСТАЮЩЕМ ПОРЯДКЕ", consoleLog);
             foreach (var item in _lists)

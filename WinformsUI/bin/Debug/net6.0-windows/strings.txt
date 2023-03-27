@@ -1,1 +1,1 @@
-array line: 0, linkedList element: 0, value: 
+array line: 0, linkedList element: 0, value: HFGTParray line: 0, linkedList element: 1, value: BWJNarray line: 0, linkedList element: 2, value: JINELarray line: 0, linkedList element: 3, value: APJNEarray line: 1, linkedList element: 0, value: IHV
