@@ -1,0 +1,1 @@
+array line: 0, linkedList element: 0, value: 

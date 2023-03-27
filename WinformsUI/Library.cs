@@ -9,16 +9,16 @@ namespace WinformsUI
     /// <summary>
     /// Класс, реализующий библиотеку
     /// </summary>
-    public class Library
+    public class Library : IComparable<Library>
     {
         /// <summary>
         /// Свойство названия библиотеки
         /// </summary>
-        public string? Name { get; set; } = "Безымянная";
+        public string Name { get; set; } = "Безымянная";
         /// <summary>
         /// Свойство описания библиотеки
         /// </summary>
-        public string? Description { get; set; } = "";
+        public string Description { get; set; } = "";
         /// <summary>
         /// Свойство количества книг в библиотеке
         /// </summary>
@@ -30,7 +30,7 @@ namespace WinformsUI
         /// <summary>
         /// Свойство типа библиотеки
         /// </summary>
-        public string? Type { get; set; } = "Обычная";
+        public string Type { get; set; } = "Обычная";
         /// <summary>
         /// Свойство наличия WiFi в библиотеке
         /// </summary>
@@ -212,6 +212,12 @@ namespace WinformsUI
                 info[i + 1] = $"{i + 2}) Тип {membersInfo[i].MemberType}, Название {membersInfo[i].Name}";
             }
             return info;
+        }
+
+        public int CompareTo(Library? library)
+        {
+            if (library is null) throw new ArgumentException("Некорректное значение параметра");
+            return Name.CompareTo(library.Name);
         }
     }
 }

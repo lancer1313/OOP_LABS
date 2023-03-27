@@ -32,14 +32,15 @@
             this.outputLog = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.listView = new System.Windows.Forms.ListView();
+            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.makeCollectionsTestButton = new System.Windows.Forms.Button();
             this.openObjsWindow = new System.Windows.Forms.Button();
             this.clearLogButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
             this.getInheritedExceptionButton = new System.Windows.Forms.Button();
             this.getClassInfoButton = new System.Windows.Forms.Button();
-            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -52,7 +53,7 @@
             this.groupBox1.Controls.Add(this.outputLog);
             this.groupBox1.Location = new System.Drawing.Point(3, 22);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(461, 509);
+            this.groupBox1.Size = new System.Drawing.Size(461, 499);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Окно вывода";
@@ -67,12 +68,13 @@
             this.outputLog.Name = "outputLog";
             this.outputLog.ReadOnly = true;
             this.outputLog.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.outputLog.Size = new System.Drawing.Size(449, 481);
+            this.outputLog.Size = new System.Drawing.Size(449, 471);
             this.outputLog.TabIndex = 0;
             // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.listView);
             this.groupBox2.Controls.Add(this.makeCollectionsTestButton);
             this.groupBox2.Controls.Add(this.openObjsWindow);
@@ -98,6 +100,16 @@
             this.listView.TabIndex = 22;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Dictionary";
+            this.columnHeader1.Width = 200;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Array";
+            this.columnHeader2.Width = 200;
             // 
             // makeCollectionsTestButton
             // 
@@ -159,15 +171,15 @@
             this.getClassInfoButton.UseVisualStyleBackColor = true;
             this.getClassInfoButton.Click += new System.EventHandler(this.getClassInfoButton_Click);
             // 
-            // columnHeader1
+            // button1
             // 
-            this.columnHeader1.Text = "Dictionary";
-            this.columnHeader1.Width = 200;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Array";
-            this.columnHeader2.Width = 200;
+            this.button1.Location = new System.Drawing.Point(17, 105);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(195, 34);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "LINQ окно";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MainWindow
             // 
@@ -199,5 +211,6 @@
         private ListView listView;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
+        private Button button1;
     }
 }

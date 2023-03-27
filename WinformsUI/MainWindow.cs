@@ -95,5 +95,11 @@ namespace WinformsUI
             item3.SubItems.Add($"В случайном порядке: {timer.Elapsed.ToString(@"m\:ss\.fff")}");
             listView.Items.Add(item3);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LINQWindow lINQWindow = new LINQWindow();
+            lINQWindow.Show();
+        }
     }
 }
